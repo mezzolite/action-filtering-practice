@@ -4,9 +4,12 @@ import ActionCard from './ActionCard'
 const ActionContainer = ({actions}) => {
     
     const showActions = () => {
-        return actions.map(action => {
-            return <ActionCard action={action} key={action.id}/>
-        })
+        if(actions){
+            return actions.map(action => {
+                return <ActionCard action={action} key={action.id}/>
+            })
+            
+        }
     }
     
     return(
