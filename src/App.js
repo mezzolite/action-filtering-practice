@@ -39,22 +39,22 @@ class App extends Component {
     }
   }
 
-  sortByRating = () => {
-    const ratingComparison = (a, b) => {
-      const ratingA = a.rating
-      const ratingB = b.rating
+  // sortByRating = () => {
+  //   const ratingComparison = (a, b) => {
+  //     const ratingA = a.rating
+  //     const ratingB = b.rating
 
-      let comparison = 0;
-      if (ratingA > ratingB) {
-        comparison = 1;
-      } else if (ratingA < ratingB) {
-        comparison = -1;
-      }
-      return comparison;
-    }
+  //     let comparison = 0;
+  //     if (ratingA > ratingB) {
+  //       comparison = -1;
+  //     } else if (ratingA < ratingB) {
+  //       comparison = 1;
+  //     }
+  //     return comparison;
+  //   }
 
-    return this.state.actions.sort(ratingComparison)
-  }
+  //   return this.state.actions.sort(ratingComparison)
+  // }
 
   
 
@@ -65,7 +65,7 @@ class App extends Component {
         <h1>Filtering Some Actions!</h1>
         <Search setSearchTerm={this.setSearchTerm}/>
         <RatingFilter setRatingSelection={this.setRatingSelection}/>
-        <ActionContainer actions={this.sortByRating()} />
+        <ActionContainer actions={this.filterActions()} />
       </div>
     );
   }
